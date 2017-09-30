@@ -1,12 +1,14 @@
 {
   "name": "WebPageReplayWrapper",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A simple wrapper for WebPageReplay",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/soulgalore/WebPageReplayWrapper.git"
   },
-  "keywords": ["webpagereplay"],
+  "keywords": [
+    "webpagereplay"
+  ],
   "author": {
     "name": "Peter Hedenskog",
     "url": "https://www.peterhedenskog.com"
