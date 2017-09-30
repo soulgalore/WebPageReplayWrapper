@@ -1,0 +1,33 @@
+{
+  "name": "WebPageReplayWrapper",
+  "version": "0.0.0",
+  "description": "A simple wrapper for WebPageReplay",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soulgalore/WebPageReplayWrapper.git"
+  },
+  "keywords": ["webpagereplay"],
+  "author": {
+    "name": "Peter Hedenskog",
+    "url": "https://www.peterhedenskog.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soulgalore/WebPageReplayWrapper/issues"
+  },
+  "devDependencies": {
+    "eslint": "~4.5.0",
+    "eslint-config-prettier": "~2.3.0",
+    "eslint-plugin-prettier": "~2.1.2",
+    "prettier": "~1.5.3"
+  },
+  "dependencies": {
+    "minimist": "1.2.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
+  },
+  "bin": "./bin/index.js"
+}
