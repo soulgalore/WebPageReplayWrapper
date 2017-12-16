@@ -1,6 +1,6 @@
 {
   "name": "webpagereplaywrapper",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simple wrapper for WebPageReplay",
   "repository": {
     "type": "git",
