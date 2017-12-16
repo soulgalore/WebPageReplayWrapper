@@ -16,13 +16,13 @@ const argv = minimist(process.argv.slice(2), {
 function startStop(wpt, argv) {
   const recordOrReplay = argv._[0];
   if (recordOrReplay === 'record' && argv.stop) {
-    return wpt.stopRecord();
+    wpt.stopRecord();
   } else if (recordOrReplay === 'record') {
-    return wpt.startRecord();
+    wpt.startRecord();
   } else if (argv.stop) {
-    return wpt.stopReplay();
+    wpt.stopReplay();
   } else {
-    return wpt.startReplay();
+    wpt.startReplay();
   }
 }
 
@@ -51,5 +51,7 @@ if (argv.help) {
     const wpt = new WebPageReplay(options);
 
     startStop(wpt, argv);
+    process.exit();
+
   }
 }
