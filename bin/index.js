@@ -38,9 +38,6 @@ if (argv.help) {
     '   --tmp             Path and filename to the file where you store the WPR data'
   );
 } else {
-  if (!argv.path) {
-    throw Error('Missing the full path to WebPageReplay dir');
-  } else {
     const options = {
       httpPort: argv.http || defaultHTTPPort,
       httpsPort: argv.https || defaultHTTPSPort,
