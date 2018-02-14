@@ -37,7 +37,6 @@ if (argv.help) {
   console.log(
     '   --tmp             Path and filename to the file where you store the WPR data'
   );
-  console.log('   --path            The full path to WebPageReplay directory');
 } else {
   if (!argv.path) {
     throw Error('Missing the full path to WebPageReplay dir');
@@ -46,7 +45,6 @@ if (argv.help) {
       httpPort: argv.http || defaultHTTPPort,
       httpsPort: argv.https || defaultHTTPSPort,
       pathToArchiveFile: argv.tmp || defaultTmpFile,
-      webPageReplayPath: argv.path
     };
     const wpt = new WebPageReplay(options);
 
