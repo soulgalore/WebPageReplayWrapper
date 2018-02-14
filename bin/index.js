@@ -27,16 +27,21 @@ function startStop(wpt, argv) {
 }
 
 if (argv.help) {
-  console.log('   Start/stop WebPageReplay record and replay');
+  console.log('   Start/stop WebPageReplay record and replay. You need to have the WebPageReplay binary installed.');
   console.log('   Usage: webpagereplaywrapper replay/record [options]');
   console.log('   Options:');
   console.log('   --start           Start the server');
   console.log('   --stop            Stop the server');
   console.log('   --http            HTTP port [' + defaultHTTPPort + ']');
   console.log('   --https           HTTPS port [' + defaultHTTPSPort + ']');
+  console.log('   --certFile        Full path to the certificate file');
+  console.log('   --keyFile         Full path to the key file');
+  console.log('   --injectScripts   A comma separated list of JavaScripts to be injected');
   console.log(
     '   --tmp             Path and filename to the file where you store the WPR data'
   );
+} else if (!argv.certFile || !argv.keyFile || !argv.injectScripts) {
+  throw Error('Missing certFile | keyfile | injectScripts');
 } else {
     const options = {
       httpPort: argv.http || defaultHTTPPort,
