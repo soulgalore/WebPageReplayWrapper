@@ -46,5 +46,4 @@ if (argv.help) {
     const wpt = new WebPageReplay(options);
 
     startStop(wpt, argv);
-  }
 }
