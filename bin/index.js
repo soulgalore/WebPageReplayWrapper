@@ -42,6 +42,8 @@ if (argv.help) {
       httpPort: argv.http || defaultHTTPPort,
       httpsPort: argv.https || defaultHTTPSPort,
       pathToArchiveFile: argv.tmp || defaultTmpFile,
+      certFile: argv.certFile,
+      keyFile: argv.keyFile
     };
     const wpt = new WebPageReplay(options);
 
