@@ -43,7 +43,8 @@ if (argv.help) {
       httpsPort: argv.https || defaultHTTPSPort,
       pathToArchiveFile: argv.tmp || defaultTmpFile,
       certFile: argv.certFile,
-      keyFile: argv.keyFile
+      keyFile: argv.keyFile,
+      injectScripts: argv.injectScripts
     };
     const wpt = new WebPageReplay(options);
 
