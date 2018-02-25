@@ -53,5 +53,9 @@ if (argv.help) {
     };
     const wpt = new WebPageReplay(options);
 
-    startStop(wpt, argv);
+    try {
+      startStop(wpt, argv);
+    } catch(error) {
+      process.exit(1);
+    }
 }
