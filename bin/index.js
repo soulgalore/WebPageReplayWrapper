@@ -27,7 +27,9 @@ function startStop(wpt, argv) {
 }
 
 if (argv.help) {
-  console.log('   Start/stop WebPageReplay record and replay. You need to have the WebPageReplay binary installed.');
+  console.log(
+    '   Start/stop WebPageReplay record and replay. You need to have the WebPageReplay binary installed.'
+  );
   console.log('   Usage: webpagereplaywrapper replay/record [options]');
   console.log('   Options:');
   console.log('   --start           Start the server');
@@ -36,26 +38,27 @@ if (argv.help) {
   console.log('   --https           HTTPS port [' + defaultHTTPSPort + ']');
   console.log('   --certFile        Full path to the certificate file');
   console.log('   --keyFile         Full path to the key file');
-  console.log('   --injectScripts   A comma separated list of JavaScripts to be injected');
+  console.log(
+    '   --injectScripts   A comma separated list of JavaScripts to be injected'
+  );
   console.log(
     '   --tmp             Path and filename to the file where you store the WPR data'
   );
-} else if (!argv.certFile || !argv.keyFile || !argv.injectScripts) {
+} else if (!argv.certFile || !argv.keyFile || !argv.injectScripts) {
   throw Error('Missing certFile | keyfile | injectScripts');
 } else {
-    const options = {
-      httpPort: argv.http || defaultHTTPPort,
-      httpsPort: argv.https || defaultHTTPSPort,
-      pathToArchiveFile: argv.tmp || defaultTmpFile,
-      certFile: argv.certFile,
-      keyFile: argv.keyFile,
-      injectScripts: argv.injectScripts
-    };
-    const wpt = new WebPageReplay(options);
+  const options = {
+    httpPort: argv.http || defaultHTTPPort,
+    httpsPort: argv.https || defaultHTTPSPort,
+    pathToArchiveFile: argv.tmp || defaultTmpFile,
+    certFile: argv.certFile,
+    keyFile: argv.keyFile,
+    injectScripts: argv.injectScripts
+  };
+  const wpt = new WebPageReplay(options);
 
-    try {
-      startStop(wpt, argv);
-    } catch(error) {
-      process.exit(1);
-    }
+  startStop(wpt, argv).then(() => process.exit()).catch(error => {
+    console.error(error);
+    process.exit(1);
+  });
 }
