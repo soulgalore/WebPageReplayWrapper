@@ -6,7 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/soulgalore/WebPageReplayWrapper.git"
   },
-  "keywords": ["webpagereplay"],
+  "keywords": [
+    "webpagereplay"
+  ],
   "author": {
     "name": "Peter Hedenskog",
     "url": "https://www.peterhedenskog.com"
